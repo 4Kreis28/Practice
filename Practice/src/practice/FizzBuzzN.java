@@ -47,7 +47,6 @@ public class FizzBuzzN{
 		//100までのFizzBuzz
 		for(int step = 1;step<=100;step++){
 			//順に割っていくので割った結果値が何になったかを格納する箱を用意
-			int NowNum = step;
 			//FizzBuzzルールに該当した場合の出力する単語を格納する箱を用意
 			ArrayList<String> outputWordBox= new ArrayList<>();
 			//以下FizzBuzzの該当する値を走査していく
@@ -55,9 +54,7 @@ public class FizzBuzzN{
 				//数値が入っているのは各セットの1つ目なので2*cycle-1番目
 				int divNum =new Integer(numWordSet.get(cycle*2-2).toString()).intValue();
 				//割り切れる場合(剰余が0)
-				if(NowNum%divNum==0){
-					//NowNumの値を更新
-					NowNum /=divNum;
+				if(step%divNum==0){
 					//出力する単語を格納
 					outputWordBox.add(numWordSet.get(2*cycle-1).toString());
 				}
